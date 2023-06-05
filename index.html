@@ -5,68 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="/styles/styles.css">
   
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <div class="container">
     <main>
-      <div class="card">
+      <div class="card card--form flow">
         <div class="img-wrapper">
           <picture>
-            <source srcset="/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 375px)">
+            <source srcset="/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 376px)">
             <img src="/assets/images/illustration-sign-up-mobile.svg" alt="image showing charts and points">
           </picture>
         </div>
         <div class="form-wrapper">
           <form class="sign-up-form">
             <h2 class="sign-up-form__title">Stay updated!</h2>
-            <div class="sign-up-form__info">
+            <div class="sign-up-form__info flow">
               <p>
                 Join 60,000+ product managers receiving monthly updates on:
               </p>
-              <ul role="list" class="sign-up-form__list">
+              <ul role="list" class="sign-up-form__list flow">
                 <li>
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6A3A"/><stop offset="100%" stop-color="#FF527B"/></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)"/><path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285"/></g></svg>
+                  </span>
                   Product discovery and building what matters
                 </li>
                 <li>
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6A3A"/><stop offset="100%" stop-color="#FF527B"/></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)"/><path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285"/></g></svg>
+                  </span>
                   Measuring to ensure updates are a success
                 </li>
                 <li>
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64"><defs><linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FF6A3A"/><stop offset="100%" stop-color="#FF527B"/></linearGradient></defs><g fill="none"><circle cx="32" cy="32" r="32" fill="url(#a)"/><path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285"/></g></svg>
+                  </span>
                   And much more!
                 </li>
               </ul>
-              <label for="e-mail-input">
-                Email address
-              </label>
-              <input type="text" placeholder="email@company.com" id="e-mail-input">
-              <button class="sing-up-form__button button">
+              <div class="input-group">
+                <label for="e-mail-input" class="sing-up-form__label">
+                  Email address
+                </label>
+                <input type="text" placeholder="email@company.com" id="e-mail-input" class="sing-up-form__input">
+              </div>
+              <button type="button" class="sing-up-form__button button">
                 Subscribe to monthly newsletter
               </button>
             </div>
           </form>
         </div>
       </div>
-      <div class="card card--success">
-        <img src="/assets/images/icon-success.svg" alt="success icon">
-        <h2 class="card__tittle">
-        Thanks for subscribing!
-        </h2>
-        <p class="card__message">
-          A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com.</span> 
-          Please open it and click the button inside to confirm   your subscription.
-        </p>
-        <button class="button">
-          Dismiss message
-        </button>
-      </div>
     </main>
+  </div>
+  <div class="card card--success">
+    <img src="/assets/images/icon-success.svg" alt="success icon">
+    <h2 class="card__tittle">
+    Thanks for subscribing!
+    </h2>
+    <p class="card__message">
+      A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com.</span> 
+      Please open it and click the button inside to confirm   your subscription.
+    </p>
+    <button class="button">
+      Dismiss message
+    </button>
   </div>
 </body>
 </html>
