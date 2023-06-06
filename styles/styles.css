@@ -40,18 +40,23 @@ body {
     color: var(--color-neutral-400);
     font-family: 'Roboto', sans-serif;
     position: relative;
-    min-height: 100%;
 }
 
+
 .container {
-    max-width: min(60rem, 96%);
-    margin-inline: auto;
+    max-width: min(60rem, 100%);
+
+    /* Only for centering */
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 .card {
     background-color: var(--color-neutral-100);
     display: grid;
     place-items: center;
+    width: 100%;
 } 
 
 .flow > * + * {
@@ -60,7 +65,6 @@ body {
 }
 
 .img-wrapper {
-    max-width: 100%;
     position: relative;
     top: -.1rem;
 }
@@ -103,6 +107,11 @@ body {
     color: var(--color-neutral-200);
 }
 
+.sing-up-form__input:focus {
+    border-color: var(--color-neutral-300);
+    outline: none;
+}
+
 .button {
     background-color: var(--color-neutral-400);
     color: var(--color-neutral-100);
@@ -116,6 +125,17 @@ body {
     width: 100%;
 }
 
+.sing-up-form__button {
+    transition: box-shadow 250ms,
+    background-color 250ms;
+}
+
+.sing-up-form__button:hover,
+.sing-up-form__button:focus {
+    background-color: var(--color-primary-400);
+    box-shadow: 0px 5px 20px var(--color-primary-400);
+}
+
 .card--success {
     display: none;
     position: absolute;
@@ -123,7 +143,15 @@ body {
     z-index: 1;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 900px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .card {
+        border-radius: .5rem;
+    }
+
     .card--form {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-flow: dense;
@@ -133,7 +161,6 @@ body {
 
     .img-wrapper {
         grid-column: 2;
-        /* margin-left: auto; */
     }
 
     .form-wrapper {
@@ -146,8 +173,3 @@ body {
         margin-inline: 1.25rem;
     }
 }
-/* @media (max-width: 375px) {
-    .container {
-        max-width: 375px;
-    }
-} */
