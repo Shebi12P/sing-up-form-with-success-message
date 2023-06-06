@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <main>
-      <div class="card card--form flow">
+      <div class="card card--form">
         <div class="img-wrapper">
           <picture>
             <source srcset="/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 900px)">
@@ -47,16 +47,19 @@
                   And much more!
                 </li>
               </ul>
-              <div class="input-group">
+            </div>
+            <div class="input-group" data-invalid-email="">
+              <div class="label-row">
                 <label for="e-mail-input" class="sing-up-form__label">
                   Email address
                 </label>
-                <input type="text" placeholder="email@company.com" id="e-mail-input" class="sing-up-form__input">
+                <span class="error-message">Valid email required</span>
               </div>
-              <button type="button" class="sing-up-form__button button">
-                Subscribe to monthly newsletter
-              </button>
+              <input type="text" placeholder="email@company.com" id="e-mail-input" class="sing-up-form__input">
             </div>
+            <button type="button" class="sing-up-form__button button">
+              Subscribe to monthly newsletter
+           </button>
           </form>
         </div>
       </div>
