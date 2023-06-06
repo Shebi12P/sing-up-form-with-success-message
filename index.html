@@ -7,13 +7,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <link rel="stylesheet" href="/styles/styles.css">
+  <script src="/scripts/main.js" type="module"></script>
   
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
   <div class="container">
     <main>
-      <div class="card card--form">
+      <div class="card card--form" data-visible="true">
         <div class="img-wrapper">
           <picture>
             <source srcset="/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 900px)">
@@ -57,26 +58,28 @@
               </div>
               <input type="text" placeholder="email@company.com" id="e-mail-input" class="sing-up-form__input">
             </div>
-            <button type="button" class="sing-up-form__button button">
+            <button type="button" id="submit-button" class="sing-up-form__button button">
               Subscribe to monthly newsletter
            </button>
           </form>
         </div>
       </div>
+      <div class="card card--success" data-visible="false">
+        <div class="img-wrapper--success">
+          <img src="/assets/images/icon-success.svg" alt="success icon">
+        </div>
+        <h2 class="card__tittle card__tittle--success">
+          Thanks for subscribing!
+        </h2>
+        <p class="card__message">
+          A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com.</span> 
+          Please open it and click the button inside to confirm   your subscription.
+        </p>
+        <button class="button button--success">
+          Dismiss message
+        </button>
+      </div>
     </main>
-  </div>
-  <div class="card card--success">
-    <img src="/assets/images/icon-success.svg" alt="success icon">
-    <h2 class="card__tittle">
-    Thanks for subscribing!
-    </h2>
-    <p class="card__message">
-      A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com.</span> 
-      Please open it and click the button inside to confirm   your subscription.
-    </p>
-    <button class="button">
-      Dismiss message
-    </button>
   </div>
 </body>
 </html>
