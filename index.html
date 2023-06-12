@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <main>
-      <div class="card card--form" data-visible="true">
+      <div class="card card--form" data-visible="true" data-animate="false">
         <div class="img-wrapper">
           <picture>
             <source srcset="/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 900px)">
@@ -49,14 +49,14 @@
                 </li>
               </ul>
             </div>
-            <div class="input-group" data-invalid-email="">
+            <div id="email-input-group"class="input-group" data-invalid-email="">
               <div class="label-row">
-                <label for="e-mail-input" class="sing-up-form__label">
+                <label for="email-input" class="sing-up-form__label">
                   Email address
                 </label>
-                <span class="error-message">Valid email required</span>
+                <span id="email-error-message" class="error-message">Valid email required</span>
               </div>
-              <input type="text" placeholder="email@company.com" id="e-mail-input" class="sing-up-form__input">
+              <input type="email" placeholder="email@company.com" id="e-mail-input" class="sing-up-form__input">
             </div>
             <button type="button" id="submit-button" class="sing-up-form__button button">
               Subscribe to monthly newsletter
@@ -64,7 +64,7 @@
           </form>
         </div>
       </div>
-      <div class="card card--success" data-visible="false">
+      <div class="card card--success" data-visible="false" data-animate="false">
         <div class="img-wrapper--success">
           <img src="/assets/images/icon-success.svg" alt="success icon">
         </div>

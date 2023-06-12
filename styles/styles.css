@@ -5,6 +5,8 @@
     --color-neutral-200: hsl(231, 7%, 60%);
     --color-neutral-300: hsl(235, 18%, 26%);
     --color-neutral-400: hsl(234, 29%, 20%);
+
+    --animation-time: 500ms;
 }
 
 @font-face {
@@ -45,14 +47,23 @@ body {
     color: var(--color-neutral-400);
     font-family: 'Roboto', sans-serif;
     position: relative;
+    overflow-x: hidden;
 }
-
 
 /*----------------------- */
 /* Form card              */
 /*----------------------- */
+
+.card--form {
+    transition: transform var(--animation-time) ease-out;
+}
+
 .card--form[data-visible="false"] {
     display: none;
+}
+
+.card--form[data-animate="true"] {
+    transform: scale(0);
 }
 
 .sign-up-form {
@@ -124,6 +135,20 @@ body {
     font-size: 3rem;
     grid-auto-flow: dense;
     width: 100%;
+}
+
+.card--success[data-animate="true"] {
+    animation: slide-in var(--animation-time) ease-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(2000px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
 }
 
 .card--success[data-visible="false"] {
@@ -250,12 +275,12 @@ body {
     }
     
     /*----------------------- */
-    /* Success card            */
+    /* Success card           */
     /*----------------------- */
     
-    .card--success {
-        width: 35rem;
-        padding: 5rem;
+    .card--success[data-visible="true"] {
+        max-width: 30rem;
+        padding: 4rem 4rem;
     }
 
     .img-wrapper--success {
