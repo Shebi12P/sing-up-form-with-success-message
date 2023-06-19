@@ -7,6 +7,17 @@
     --color-neutral-400: hsl(234, 29%, 20%);
 
     --animation-time: 500ms;
+    --reduced-motion: "true";
+}
+
+/* Disable animations for users with preference for reduced motion*/
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: 0.01ms !important;
+    }
 }
 
 @font-face {
