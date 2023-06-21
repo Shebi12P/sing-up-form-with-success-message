@@ -147,6 +147,10 @@ body {
     grid-auto-flow: dense;
     width: 100%;
 }
+.card--success {
+    --start-animation: 2000px;
+    --end-animation: 0px;
+}
 
 .card--success[data-animate="true"] {
     animation: slide-in var(--animation-time) ease-out;
@@ -154,11 +158,11 @@ body {
 
 @keyframes slide-in {
     0% {
-        transform: translateX(2000px);
+        transform: translateX(var(--start-animation));
     }
 
     100% {
-        transform: translateX(0px);
+        transform: translateX(var(--end-animation));
     }
 }
 

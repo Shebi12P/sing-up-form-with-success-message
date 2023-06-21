@@ -1,19 +1,17 @@
 import { checkForEmptyInput } from "./formValidation/checkForEmptyInput.js";
 import { checkForInvalidEmail } from "./formValidation/checkForInvalidEmail.js";
 import { changeDOM } from "./utils/changeDOM.js";
+import { changeAnimation } from "./utils/changeAnimation.js";
+import { changeVisibility } from "./utils/changeVisibility.js";
+import { getAnimationTimeInMiliSeconds } from "./utils/getAnimationTime.js";
 
 const submitButton = document.getElementById("submit-button");
-//Gets the value of --reduced-motion from css variable
-//Then checks if the value is equal to true setting the variable as boolean
 
 submitButton.addEventListener("click", () => {
-    // const USER_PREFERS_REDUCED_MOTION = getComputedStyle(document.documentElement).getPropertyValue("--reduced-motion") == "true";
-    // const USER_PREFERS_REDUCED_MOTION = true;
     const inputEmail = document.getElementById("email-input").value;
     const isEmpty = checkForEmptyInput(inputEmail);
     const emailIsInvalid = checkForInvalidEmail(inputEmail);
     const emailInputGroup = document.getElementById("email-input-group");
-    // console.log(USER_PREFERS_REDUCED_MOTION)
     
     if(isEmpty || emailIsInvalid) {
         emailInputGroup.setAttribute("data-invalid-email", "true");
@@ -21,7 +19,24 @@ submitButton.addEventListener("click", () => {
     }
     emailInputGroup.setAttribute("data-invalid-email", "false");
     
-    // if(USER_PREFERS_REDUCED_MOTION) return;  
-    
     changeDOM();
-})
+});
+
+const successButton = document.querySelector(".button--success");
+
+successButton.addEventListener("click", () => {
+    const successCard = document.querySelector(".card--success");
+    const animationTime = getAnimationTimeInMiliSeconds();
+    let animationEndState = getComputedStyle(successCard).getPropertyValue("--end-animation");
+    let animationStartState = getComputedStyle(successCard).getPropertyValue("--start-animation");
+
+    console.log(animationEndState, animationStartState);
+    successCard.style.setProperty("--start-animation", animationEndState);
+    successCard.style.setProperty("--end-animation", animationStartState); 
+    
+    changeAnimation(successCard, true);
+
+    setTimeout(()=> {
+        changeVisibility(successCard, false);
+    }, animationTime)
+});
